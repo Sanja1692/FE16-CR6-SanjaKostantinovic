@@ -1,0 +1,24 @@
+<div class="container" style="width: 80%;">
+    <p class="text-center googlefont border-bottom p-5">Our specialities</p>
+    <div class="row row-cols-3 pt-5 pb-5">
+        <div class="col-lg-4 col-md-5 col-sm-10  pb-3" *ngFor="let meal of meals; index as mealId">
+            <div class="card" width="33%">
+                <img src="{{meal.img}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{meal.name}}
+                    </h5>
+                    <p class="card-text">{{meal.description}}</p>
+                    <p class="border-top border-bottom p-2">{{meal.price | currency:'EUR'}}</p>
+                    <ng-template [ngIf]="meal.availability > false" [ngIfElse]="none">
+                        <a routerLink="/meals/{{mealId}}" class="btn btn-primary">Details</a>
+                        <a (click)="addToCart(meal)" class="btn btn-success ms-3">Order</a>
+                    </ng-template>
+                    <ng-template #none>
+                        <p class="text-danger">This product is not available</p>
+                    </ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

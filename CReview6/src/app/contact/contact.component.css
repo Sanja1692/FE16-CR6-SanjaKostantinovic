@@ -1,0 +1,36 @@
+.parallax {
+    position: relative;
+    margin-top: -60px;
+    /* The image used */
+    background-image: url("/assets/hero2.jpg");
+    /* Set a specific height */
+    /* min-height: 550px; */
+    height: 90vh;
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 1px 1px 50px rgba(70, 70, 70, 0.488) inset;
+    justify-content: center;
+    opacity: 0.8;
+}
+
+.insideHero {
+    position: relative;
+    padding-top: 15%;
+    text-align: center;
+    color: rgb(50, 50, 50);
+}
+
+.googlefont {
+    font-family: 'Great Vibes', cursive;
+    -webkit-transition: all 0.8 linear;
+    transition: all 0.8 linear;
+}
+
+.googlefont:hover {
+    font-size: 85px;
+    color: darkcyan;
+    padding: 2%;
+}

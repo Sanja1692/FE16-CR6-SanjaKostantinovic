@@ -1,0 +1,78 @@
+<div class="pb-5 d-flex row ms-5 me-5 text">
+    <div class="leftSide col col-8 ">
+        <div class="cart-item">
+            <div>
+                <h3 class="mt-5 bg-light border backgr">Cart</h3>
+            </div>
+            <div class="card mb-3" *ngFor="let item of items">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="{{item.img}}" class="img-fluid p-3" alt="">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between pb-3">
+                                <h6 class="card-title">{{item.name}}</h6>
+                                <h6 class="card-title">Price: {{item.price | currency:'EUR'}}</h6>
+                            </div>
+                            <p class="card-text w-75">{{item.description}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="rightside pt-5 col col-4">
+        <div class="card">
+            <div class="card-header">
+                <h3>Summary</h3>
+            </div>
+            <div class="ps-3 pe-3 pt-4">
+                <div class="d-flex justify-content-between">
+                    <p>Products</p>
+                    <p>{{amount | currency:'EUR'}}</p>
+                </div>
+                <div class="d-flex justify-content-between">
+                    <p>Service</p>
+
+                    <p>{{service | currency:'EUR'}}</p>
+                </div>
+                <div class="d-flex justify-content-between border-bottom">
+                    <p>Discount</p>
+                    <p>{{discount | currency:'EUR'}}</p>
+                </div>
+                <div class="d-flex justify-content-between pt-3">
+                    <div>
+                        <p class="mb-0"><b> Total amount</b></p>
+                        <p><b>(including VAT)</b></p>
+                    </div>
+                    <p>{{totalPrice | currency:'EUR'}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+        <div class="container">
+            <h1 class="googlefont">Order Form</h1>
+            <p class="border-bottom">please fill up the info for the delivery</p>
+            <p class="mb-2">Name</p>
+            <div>
+
+                <label for="name">
+        </label>
+                <input id="name" type="text" class="w-100 mb-2" formControlName="name">
+            </div>
+            <p class="mb-2"> Adress</p>
+            <div>
+                <label for="address">
+        </label>
+                <input id="address" type="text" class="w-100 mb-3" formControlName="address">
+            </div>
+
+            <button class="btn btn-primary mb-5 rounded" type="submit">Purchase</button>
+        </div>
+
+    </form>

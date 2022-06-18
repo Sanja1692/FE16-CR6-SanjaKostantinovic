@@ -1,0 +1,9 @@
+* {
+    z-index: 2;
+}
+
+.googlefont {
+    font-family: 'Great Vibes', cursive;
+    -webkit-transition: all 0.8 linear;
+    transition: all 0.8 linear;
+}

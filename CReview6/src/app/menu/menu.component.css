@@ -1,0 +1,12 @@
+.googlefont {
+    font-family: 'Great Vibes', cursive;
+    font-size: 60px;
+    -webkit-transition: all 0.8 linear;
+    transition: all 0.8 linear;
+}
+
+.googlefont:hover {
+    font-size: 85px;
+    color: darkcyan;
+    padding: 2%;
+}
